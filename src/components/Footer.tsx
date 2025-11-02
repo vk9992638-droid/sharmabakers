@@ -20,6 +20,14 @@ const Footer = ({ onNavigate }: FooterProps) => {
     }
   };
 
+  const handleMenuClick = () => {
+    if (onNavigate) {
+      onNavigate('menu-full');
+    } else {
+      scrollToSection('menu');
+    }
+  };
+
   const handleHomeClick = () => {
     if (onNavigate) {
       onNavigate('home');
@@ -75,7 +83,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                 Home
               </button>
               <button
-                onClick={() => scrollToSection('menu')}
+                onClick={handleMenuClick}
                 className="text-left text-amber-100 hover:text-white transition-colors"
               >
                 Menu

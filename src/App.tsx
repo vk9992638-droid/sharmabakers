@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import AboutPage from './components/AboutPage';
+import MenuPage from './components/MenuPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -18,6 +19,17 @@ function App() {
       <div className="min-h-screen bg-amber-50">
         <Header onNavigate={setCurrentPage} />
         <AboutPage />
+        <Footer onNavigate={setCurrentPage} />
+        <WhatsAppButton />
+      </div>
+    );
+  }
+
+  if (currentPage === 'menu-full') {
+    return (
+      <div className="min-h-screen bg-amber-50">
+        <Header onNavigate={setCurrentPage} />
+        <MenuPage />
         <Footer onNavigate={setCurrentPage} />
         <WhatsAppButton />
       </div>

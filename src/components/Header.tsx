@@ -34,6 +34,15 @@ const Header = ({ onNavigate }: HeaderProps) => {
     setIsMenuOpen(false);
   };
 
+  const handleMenuClick = () => {
+    if (onNavigate) {
+      onNavigate('menu-full');
+    } else {
+      scrollToSection('menu');
+    }
+    setIsMenuOpen(false);
+  };
+
   const handleHomeClick = () => {
     if (onNavigate) {
       onNavigate('home');
@@ -87,7 +96,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
               Home
             </button>
             <button
-              onClick={() => scrollToSection('menu')}
+              onClick={handleMenuClick}
               className="text-gray-700 hover:text-amber-600 transition-colors font-medium"
             >
               Menu
@@ -155,7 +164,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 Home
               </button>
               <button
-                onClick={() => scrollToSection('menu')}
+                onClick={handleMenuClick}
                 className="text-left text-gray-700 hover:text-amber-600 transition-colors font-medium py-2"
               >
                 Menu
